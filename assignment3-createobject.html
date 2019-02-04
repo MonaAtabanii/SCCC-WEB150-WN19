@@ -1,0 +1,81 @@
+<!DocTYPE html>
+<html>
+    <Head>
+        <title> Assignment 3 - Humnan being Object </title>
+    </Head>
+    <body>
+        <h2> 
+            Humnan being Objects 
+        </h2>
+        <div id="info">
+            <h2> Pepole details:</h2>
+            <div id="human1"></div>
+            <div id="human2"></div>
+            <div id="human3"></div>
+            <div id="detheight"></div>
+            
+        </div>
+        <script>
+            //crete the template for Human being objects
+            function HumanBeing(name, yearOfBirth, height){
+                this.name = name;
+                this.yearOfBirth = yearOfBirth;
+                this.height = height;
+                var currentYear = 2019;
+                var msg = ' ';
+                var standardHeight = 7;                
+
+                //Function to calculate age
+                this.checkAge = function(){
+                    return currentYear - this.yearOfBirth;
+                }
+
+                //Function to check height
+                this.checkHeight = function(){
+                    var prntheight = document.getElementById('detheight');
+                    if (standardHeight == this.height){
+                        msg += prntheight.textContent = 'standard height';
+                        return  msg;}
+                    else if (standardHeight > this.height) {
+                        msg += prntheight.textContent = 'short';
+                        return msg;} 
+                    else if (standardHeight < this.height){
+                        msg += prntheight.textContent = 'tall';
+                        return msg;} 
+                }             
+            }
+            
+            //crete 3 instances of Human Being object
+            var david = new HumanBeing('David Figo', 1980, 6);
+            var sara = new HumanBeing('Sara Suliman', 2000, 5.5);
+            var zein = new HumanBeing('Zein Nelson', 1964, 8);
+            
+            
+            //update the HTML page
+            var dethuman1 = '1. ' + david.name + '; his height is ' + david.height;
+                dethuman1 += ' inches, he is a ' + david.checkHeight() + ' man.'
+                dethuman1 += ', He was born in  ' + david.yearOfBirth + ' and his age in 2019 is: ';
+                dethuman1 += david.checkAge() + ' years.';
+
+            var elHuman1 = document.getElementById('human1');
+                elHuman1.textContent = dethuman1;
+
+            var dethuman2 = '2. '+ sara.name + '; her height is ' + sara.height;
+                dethuman2 += ' inches, she is a ' + sara.checkHeight() + ' woman.'
+                dethuman2 += ', she was born in  ' + sara.yearOfBirth + ' and her age in 2019 is: ';
+                dethuman2 += sara.checkAge() + ' years.';
+
+            var elHuman1 = document.getElementById('human2');
+                elHuman1.textContent = dethuman2;
+
+            var dethuman3 = '3. ' + zein.name + '; his height is ' + zein.height;
+                dethuman3 += ' inches, he is a ' + zein.checkHeight() + ' man.';
+                dethuman3 += ', he was born in  ' + zein.yearOfBirth + ' and his age in 2019 is: ';
+                dethuman3 += zein.checkAge() + ' years.';
+
+            var elHuman3 = document.getElementById('human3');
+                elHuman3.textContent = dethuman3;
+
+        </script>
+    </body>
+</html>

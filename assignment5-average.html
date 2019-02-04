@@ -1,0 +1,22 @@
+<!DocTYPE html>
+<html>
+    <Head>
+        <title> 
+                Assignment 5 - Average of numbers 
+        </title>
+    </Head>
+    <body>
+        <script type ="text/javascript">
+            var x, count = 0, sum = 0, average = 0;
+            x = Number(prompt("Enter test score" + '\n' + "Or enter 999 to end entries"));
+            while (x!=999){
+                sum = sum +x;
+                count = count +1;
+                x = Number(prompt("Enter test score" + '\n' + "Or enter 999 to end entries"));
+            }
+            average = sum/count;
+            alert("Average score is "+ average);
+        
+        </script>
+    </body>
+</html>

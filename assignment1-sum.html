@@ -1,0 +1,27 @@
+<!DocTYPE html>
+<html>
+    <Head>
+        <title> 
+           Assignment 1 - Addition of two numbers 
+        </title>
+    </Head>
+    <body>
+        <div id = "info"> 
+            <div id = "Welcome"></div>
+            <div id = "Sum"></div>
+        </div>
+        <script>
+        //Create 3 vars
+        var x = 5, y = 7;
+        var sum = x + y;
+                    
+        //Print to console
+        var welcomeMessage = document.getElementById('Welcome');
+            welcomeMessage.textContent = 'Welcome to my calculator';
+        var total = document.getElementById('Sum');
+            total.textContent = 'The sum of ' + x + ' + ' + y + ' is : ' + sum;
+        //document.writeln('Welcome to my calculator');
+        //document.writeln('The sum of ' + x + ' + ' + y + ' is : ' + sum);
+        </script>
+    </body>
+</html>
