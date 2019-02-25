@@ -21,17 +21,17 @@
     <br/>
     <h2> How many miles per gallon does your car ues?</h2>
     <br/>
-    <label for = "milegeqty">
+    <label for = "milege">
         Enter miles driven: <br/>
-        <input type="text" id="milegeqyt" name="milegeqyt"  max="10" disabled="false" />
-    </label for = "gallonqty"> </br> 
+        <input type="text" id="milege" name="milege"  max="10"  />
+    </label for = "gallon"> </br> 
     <label>
         Enter gallons of gas used: <br/>
-        <input type="text" id="gallonqyt" name="gallonqyt"  max="10"/>
+        <input type="text" id="gallon" name="gallon"  max="10"/>
     </label> </br>
     <label for="mpg">
         Miles per Gallon <br/>
-        <output type="text" id="mpg" name="mpg"/>
+        <input type="text" id="mpg" name="mpg" disabled/>
     </label> </br></br>
     <div align="left">
         <button onclick="calculateMPG()">Calculate MPG</button>
@@ -46,8 +46,8 @@
         return document.getElementById(id);
     };            
      var calculateMPG = function() {              
-        var mileage = document.getElementById("milegeqty").value;
-        var gallon = document.getElementById("gallonqty").value;
+        var mileage = document.getElementById("milege").value;
+        var gallon = document.getElementById("gallon").value;
         var check = isNumber(mileage, gallon);
         if (check == false) {
             alert("please enter only number values into the form");
@@ -60,6 +60,7 @@
         var getMPG = (mileage) / gallon;
         document.getElementById("mpg").value = getMPG;        
     }
+     //Function to check if the inputs are numbers or not
     function isNumber(x, y) {
         var regex = /[^0-9*$]/;
         if (regex.test(x) || regex.test(y)){
@@ -69,11 +70,9 @@
         }
         return result;
      }
-     function disableBtn() {
-    document.getElementById("mpg").disabled = true;
-    }
      window.onload = function () {
         $("onclick").onclick = calculateMPG;
+          $("mileage").focus();
     };
       
 </script>
