@@ -21,18 +21,22 @@
     <br/>
     <h2> How many miles per gallon does your car ues?</h2>
     <br/>
+    <!-- Create the input field for geting milege from the user -->
     <label for = "milege">
         Enter miles driven: <br/>
         <input type="text" id="milege" name="milege"  max="10"  />
     </label for = "gallon"> </br> 
+    <!-- Create the input field for geting gallon from the user -->
     <label>
         Enter gallons of gas used: <br/>
         <input type="text" id="gallon" name="gallon"  max="10"/>
     </label> </br>
+    <!-- Create the input field for mpg milege we made it disable because it will contain the result from the function calculatempg()-->
     <label for="mpg">
         Miles per Gallon <br/>
-        <input type="text" id="mpg" name="mpg" disabled/>
+        <input type="text" id="mpg" name="mpg" disbaled/>
     </label> </br></br>
+    <!-- Create the button to call the function, do the calculation and post it intop mpg field-->
     <div align="left">
         <button onclick="calculateMPG()">Calculate MPG</button>
     </div>
@@ -40,27 +44,29 @@
 </label>
 </div>
 </section>
-
 <script>
+    //function to be able to load all events
     var $ = function(id) {
         return document.getElementById(id);
-    };            
+    };   
+    //the mpg claculation function         
      var calculateMPG = function() {              
         var mileage = document.getElementById("milege").value;
         var gallon = document.getElementById("gallon").value;
-        var check = isNumber(mileage, gallon);
+        var check = isNumber(mileage, gallon); //here we call the isNumber function to check wethere they are number or not
         if (check == false) {
             alert("please enter only number values into the form");
             exit;
         }
-        if (gallon < 0 || mileage < 0) {
+        if (gallon < 0 || mileage < 0) { // to check if they are negative number then nothing will be done
             alert("Sorry you can't enter any negative values");
             exit;
         }
+        //the formula to set the mpg value and set it
         var getMPG = (mileage) / gallon;
         document.getElementById("mpg").value = getMPG;        
     }
-     //Function to check if the inputs are numbers or not
+    //the isNumber function to check wether they are number or not
     function isNumber(x, y) {
         var regex = /[^0-9*$]/;
         if (regex.test(x) || regex.test(y)){
@@ -70,9 +76,15 @@
         }
         return result;
      }
+
+     /*function disableBtn() {
+    document.getElementById("mpg").disabled = true;
+    }*/
+    
+     //to load all function and events 
      window.onload = function () {
         $("onclick").onclick = calculateMPG;
-          $("mileage").focus();
+        $("mileage").focus();
     };
       
 </script>
