@@ -1,0 +1,85 @@
+<!DocTYPE html>
+<html>
+    <Head>
+        <title> Assignment 7 - MPG Calculator </title>
+        <meta name="viewport" content="width=device-width" />
+        <meta name="robots" content="noindex,nofollow" />
+        <meta charset="utf-8">
+        <script src="https://use.fontawesome.com/6a71565c22.js"></script>
+        <link rel="stylesheet" href="portal.css" />
+        <link rel="stylesheet" href="form.css" />
+        <link re1="stylesheet" href="nav.css"/>
+    </Head>
+    
+    <body>
+    <!-- START WRAPPER -->
+    <div class="wrapper">
+    <header>
+        <h1 align="center"><a href="assignment7-mpgcalculator.html"><i class= "logo fa fa-calculator"></i> Miles Per Gallon Calculator</a></h1>
+    </header>
+    <section>    
+    <br/>
+    <h2> How many miles per gallon does your car ues?</h2>
+    <br/>
+    <label for = "milegeqty">
+        Enter miles driven: <br/>
+        <input type="text" id="milegeqyt" name="milegeqyt"  max="10" disabled="false" />
+    </label for = "gallonqty"> </br> 
+    <label>
+        Enter gallons of gas used: <br/>
+        <input type="text" id="gallonqyt" name="gallonqyt"  max="10"/>
+    </label> </br>
+    <label for="mpg">
+        Miles per Gallon <br/>
+        <output type="text" id="mpg" name="mpg"/>
+    </label> </br></br>
+    <div align="left">
+        <button onclick="calculateMPG()">Calculate MPG</button>
+    </div>
+</p>
+</label>
+</div>
+</section>
+
+<script>
+    var $ = function(id) {
+        return document.getElementById(id);
+    };            
+     var calculateMPG = function() {              
+        var mileage = document.getElementById("milegeqty").value;
+        var gallon = document.getElementById("gallonqty").value;
+        var check = isNumber(mileage, gallon);
+        if (check == false) {
+            alert("please enter only number values into the form");
+            exit;
+        }
+        if (gallon < 0 || mileage < 0) {
+            alert("Sorry you can't enter any negative values");
+            exit;
+        }
+        var getMPG = (mileage) / gallon;
+        document.getElementById("mpg").value = getMPG;        
+    }
+    function isNumber(x, y) {
+        var regex = /[^0-9*$]/;
+        if (regex.test(x) || regex.test(y)){
+            result = false;
+        }else{
+            result = true;
+        }
+        return result;
+     }
+     function disableBtn() {
+    document.getElementById("mpg").disabled = true;
+    }
+     window.onload = function () {
+        $("onclick").onclick = calculateMPG;
+    };
+      
+</script>
+<footer>
+    <p><small>&copy; MPG Claculator By: <a href="#" target="_blank">Mona Mohamed</a>, All Rights Reserved </small></p>
+</footer>
+    </body>
+</html>
+
