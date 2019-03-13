@@ -1,0 +1,58 @@
+/* styles for tables */
+
+
+table {
+    border-collapse: collapse;
+    border: 1px solid #000;
+    width: 80%;
+    margin: auto;
+    vertical-align: top;
+    align-content: stretch;
+    align-items: flex-start;
+}
+
+
+tr{
+    vertical-align: top;
+    align-content: stretch;
+    align-items: flex-start;
+}
+
+
+/*table.client{
+    background-color: antiquewhite;
+    margin-bottom: 2em;
+}*/
+table.audience{
+    background-color: azure;
+    vertical-align: top;
+    align-content: stretch;
+    align-items: flex-start;
+    margin-top: 0.5em;
+   
+}
+
+.columns{
+    width: 33%;
+}
+
+
+thead tr{
+    background-color: #6495ed;
+    vertical-align: top;
+    align-content: stretch;
+    align-items: flex-start;
+}
+
+tbody.table2{
+    background-color: #D6EAF8;
+}
+
+td, th {
+    border: 1px solid #000;
+    padding: .5em;
+}
+
+.col1{
+    width:10%;
+}

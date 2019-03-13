@@ -1,0 +1,38 @@
+/* Styles for tables */
+
+table {
+    width:100%;
+    height: 200px;
+    margin:auto;
+    border-collapse: collapse;
+    margin-bottom: 2em;
+    /*border: 1px solid #000;*/
+   }
+
+table.allpages th {
+    width: 100%;
+    background-color: #D6EAF8;
+    color:darkblue;
+}
+
+td,th {
+    width: 50%;
+    padding: 0.5em;
+    text-align: left;
+    font-family: "Arial", "Helvetica", sans-serif;
+    line-height: 2;
+    background-color: aliceblue;
+    /*border: 1px solid #000;*/
+}
+
+@media all and (max-width:736px) {
+    
+    img.phone {
+       		width:100%;
+    }
+    
+    img.tablet, img.desktop {
+        		display:none;
+    }  
+
+}
